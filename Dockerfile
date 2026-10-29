@@ -5,7 +5,7 @@
 # =============================================================================
 
 # TODO(step-4a): set the builder base image as node:20.11-slim and name the stage "builder".
-FROM node:20-slim AS builder
+FROM node:22-slim AS builder
 #   Do NOT use `node:latest` — we want reproducible builds across the cohort.
 
 WORKDIR /app
@@ -22,8 +22,8 @@ COPY app/ .
 # =============================================================================
 
 # TODO(step-4d): set the runtime base image (same tag as step-4a for consistency).
-FROM node:20-slim
-RUN apt-get update && apt-get upgrade -y && npm install -g npm@latest && rm -rf /var/lib/apt/lists/*
+FROM node:22-slim
+
 WORKDIR /app
 
 # TODO(step-4e): copy the fully-installed app from the builder stage.
