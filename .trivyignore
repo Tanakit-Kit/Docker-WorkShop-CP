@@ -1,0 +1,2 @@
+# zlib1g: Debian will_not_fix. Affects zipOpenNewFileInZip4_6 (minizip), not used by this Node app.
+CVE-2023-45853
